@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatrixCalculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>MatrixCalculator</h1>
+        <p class="subtitle">Calculadora avanzada de matrices</p>
+
+        <!-- Sección de entrada para las matrices -->
+        <div class="matrix-input-section">
+            <div class="matrix-input">
+                <h2>Matriz A</h2>
+                <div>
+                    <label for="rows1">Filas:</label>
+                    <input type="number" id="rows1" min="1" placeholder="Filas">
+                    <label for="cols1">Columnas:</label>
+                    <input type="number" id="cols1" min="1" placeholder="Columnas">
+                    <button onclick="createMatrix(1)">Crear Matriz A</button>
+                    <button onclick="clearMatrix(1)">Limpiar Matriz A</button>
+                </div>
+                <div id="matrix1-container" class="matrix-container hidden"></div>
+            </div>
+
+            <div class="matrix-input">
+                <h2>Matriz B</h2>
+                <div>
+                    <label for="rows2">Filas:</label>
+                    <input type="number" id="rows2" min="1" placeholder="Filas">
+                    <label for="cols2">Columnas:</label>
+                    <input type="number" id="cols2" min="1" placeholder="Columnas">
+                    <button onclick="createMatrix(2)">Crear Matriz B</button>
+                    <button onclick="clearMatrix(2)">Limpiar Matriz B</button>
+                </div>
+                <div id="matrix2-container" class="matrix-container hidden"></div>
+            </div>
+        </div>
+
+        <!-- Operaciones básicas -->
+        <div class="basic-operations">
+            <h2>Operaciones Básicas</h2>
+            <button onclick="addMatrices()">Sumar</button>
+            <button onclick="subtractMatrices()">Restar</button>
+            <button onclick="multiplyMatrices()">Multiplicar</button>
+            <input type="number" id="scalar" placeholder="Escalar">
+            <button onclick="multiplyByScalar(1)">Escalar x M1</button>
+            <button onclick="multiplyByScalar(2)">Escalar x M2</button>
+        </div>
+
+        <!-- Operaciones avanzadas -->
+        <div class="advanced-operations">
+            <h2>Operaciones Avanzadas</h2>
+            <button onclick="transposeMatrix(1)">Transpuesta M1</button>
+            <button onclick="transposeMatrix(2)">Transpuesta M2</button>
+            <button onclick="determinantMatrix(1)">Determinante M1</button>
+            <button onclick="determinantMatrix(2)">Determinante M2</button>
+            <button onclick="identityMatrix(1)">Identidad M1</button>
+            <button onclick="identityMatrix(2)">Identidad M2</button>
+            <button onclick="inverseMatrix(1)">Inversa M1</button>
+            <button onclick="inverseMatrix(2)">Inversa M2</button>
+        </div>
+
+        <!-- Resultado -->
+        <div id="result-container" class="result-container hidden">
+            <h2>Resultado</h2>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
